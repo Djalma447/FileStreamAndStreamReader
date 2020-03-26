@@ -12,8 +12,11 @@ namespace Course
             try
             {
                 sr = File.OpenText(path);
-                string line = sr.ReadLine();
-                Console.WriteLine(line);
+                while (!sr.EndOfStream) // While the Stream of the file is not finished
+                {
+                    string line = sr.ReadLine();
+                    Console.WriteLine(line);
+                }
             }
             catch (IOException e)
             {
